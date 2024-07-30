@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply border-border;
+        transition: all 0.25s ease-in-out;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-satoshi {
+    font-family: "Satoshi";
+}
+
+.rounded-custom {
+    border-radius: 0.375rem;
+}
+
+.auth-button {
+    @apply w-1/2 p-2 rounded-custom outline-none;
+    &.active {
+        @apply text-white bg-primary;
+    }
+}
+
+.deposit-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    @apply bg-background h-10 w-full rounded-md border border-input border-gray-800 focus:outline-none focus:border-none bg-background px-3 py-2 text-sm;
+}
+
+.deposit-select option {
+    font-family: "Satoshi", sans-serif;
+    color: #ffffff;
+    @apply bg-background;
+}
+
+.deposit-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
